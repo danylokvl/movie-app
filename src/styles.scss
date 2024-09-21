@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: "Inria Sans", sans-serif;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: unset;
+  border: unset;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
