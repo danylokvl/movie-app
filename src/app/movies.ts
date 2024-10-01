@@ -14,7 +14,7 @@ export const movies = [
     title: 'Kingdom of the Planet of the Apes',
     video: false,
     vote_average: 6.932,
-
+    duration: '85 minutes',
     vote_count: 807,
   },
   {
@@ -32,6 +32,7 @@ export const movies = [
     title: 'Civil War',
     video: false,
     vote_average: 7.1,
+    duration: '100 minutes',
     vote_count: 1296,
   },
   {
@@ -49,6 +50,7 @@ export const movies = [
     title: 'Godzilla x Kong: The New Empire',
     video: false,
     vote_average: 7.233,
+    duration: '80 minutes',
     vote_count: 2519,
   },
   {
@@ -66,6 +68,7 @@ export const movies = [
     title: 'Tarot',
     video: false,
     vote_average: 6.5,
+    duration: '90 minutes',
     vote_count: 341,
   },
 ];

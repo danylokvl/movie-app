@@ -1,10 +1,11 @@
 import { NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DurationPipe } from '../../pipes/duration.pipe';
 
 @Component({
   selector: 'app-movie-card',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, DurationPipe],
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.scss',
 })

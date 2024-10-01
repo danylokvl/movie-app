@@ -6,6 +6,7 @@
       <h4>{{ movie.release_date }}</h4>
       <h4>{{ movie.original_language }}</h4>
       <h4 *ngIf="movie.adult; else notAdult">for Adults</h4>
+      <h4>duration: {{ movie.duration | duration }}</h4>
       <ng-template #notAdult>
         <h4>for Adults and Kids</h4>
       </ng-template>

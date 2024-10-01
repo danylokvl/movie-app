@@ -2,12 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { movies } from '../../movies';
 import { Movie } from '../models/movie.model';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [MovieCardComponent, NgFor],
+  imports: [MovieCardComponent, NgFor, NgIf],
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.scss',
 })
