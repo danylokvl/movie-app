@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'duration',
+  name: 'formatDuration',
   standalone: true,
 })
-export class DurationPipe implements PipeTransform {
+export class FormatDurationPipe implements PipeTransform {
   transform(value: string): string {
     if (value.includes('minutes')) {
       const minutes = +value.replace('minutes', '');

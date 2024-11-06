@@ -1,38 +1,37 @@
-<div class="card">
-  <img [src]="movie.poster_path" class="card__poster-image" />
-  <div class="card__content">
-    <div class="card__top-container">
-      <h2>{{ movie.original_title }}</h2>
-      <h4>{{ movie.release_date }}</h4>
-      <h4>{{ movie.original_language }}</h4>
-      <h4 *ngIf="movie.adult; else notAdult">for Adults</h4>
-      <h4>duration: {{ movie.duration | duration }}</h4>
-      <ng-template #notAdult>
-        <h4>for Adults and Kids</h4>
-      </ng-template>
-    </div>
-    <div class="card__overview-container">
-      <h4>overview:</h4>
+<p-card header="{{ movie.original_title }}" styleClass="card">
+  <ng-template pTemplate="header">
+    <img [src]="movie.poster_path" />
+  </ng-template>
+
+  <ul class="card__genres-container">
+    <li *ngFor="let genre of movie.genres">{{ genre }}</li>
+  </ul>
+  <ng-template pTemplate="content">
+    <div class="card__text-container">
       <p>
         {{ movie.overview }}
       </p>
     </div>
-    <div class="card__buttons-container">
-      <button
-        class="card__icon-btn"
-        title="add to favorites"
-        (click)="addToFavorites(movie.id)"
-      >
+    <ul class="card__characteristics-list">
+      <li>
+        <h4>Duration</h4>
+        <span> {{ movie.duration | formatDuration }}</span>
+      </li>
+      <li>
+        <h4>Rating</h4>
+        <span> {{ movie.rating }}</span>
+      </li>
+    </ul>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <div class="card__footer">
+      <button class="card__details-btn" title="Details">DETAILS</button>
+      <button title="Add to Favorites" (onClick)="addToFavorites(movie.id)">
         <span class="material-symbols-outlined"> favorite </span>
       </button>
-      <button
-        class="card__icon-btn"
-        title="add to watchlist"
-        (click)="addToWatchList(movie.id)"
-      >
+      <button title="Add to Watchlist">
         <span class="material-symbols-outlined"> playlist_add </span>
       </button>
-      <button class="card__details-btn">DETAILS</button>
     </div>
-  </div>
-</div>
+  </ng-template>
+</p-card>

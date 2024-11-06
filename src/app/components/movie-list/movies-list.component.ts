@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { movies } from '../../movies';
 import { Movie } from '../models/movie.model';

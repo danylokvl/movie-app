@@ -1,13 +1,20 @@
-import { NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DurationPipe } from '../../pipes/duration.pipe';
-
+import { NgIf, NgFor } from '@angular/common';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FormatDurationPipe } from '../../pipes/format-duration.pipe';
+import { CardModule } from 'primeng/card';
 @Component({
   selector: 'app-movie-card',
   standalone: true,
-  imports: [NgIf, DurationPipe],
+  imports: [NgIf, FormatDurationPipe, CardModule, NgFor],
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class MovieCardComponent {
   @Input() movie: any;
