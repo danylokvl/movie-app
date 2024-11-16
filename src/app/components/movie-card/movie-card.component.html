@@ -1,17 +1,20 @@
 <p-card header="{{ movie.original_title }}" styleClass="card">
   <ng-template pTemplate="header">
     <img [src]="movie.poster_path" />
+    <div class="card__buttons-container">
+      <button title="Add to Favorites" (onClick)="addToFavorites(movie.id)">
+        <span class="material-symbols-outlined"> favorite </span>
+      </button>
+      <button title="Add to Watchlist">
+        <span class="material-symbols-outlined"> playlist_add </span>
+      </button>
+    </div>
   </ng-template>
 
   <ul class="card__genres-container">
     <li *ngFor="let genre of movie.genres">{{ genre }}</li>
   </ul>
   <ng-template pTemplate="content">
-    <div class="card__text-container">
-      <p>
-        {{ movie.overview }}
-      </p>
-    </div>
     <ul class="card__characteristics-list">
       <li>
         <h4>Duration</h4>
@@ -21,17 +24,10 @@
         <h4>Rating</h4>
         <span> {{ movie.rating }}</span>
       </li>
+      <li>
+        <h4>Language</h4>
+        <span> {{ movie.original_language }}</span>
+      </li>
     </ul>
-  </ng-template>
-  <ng-template pTemplate="footer">
-    <div class="card__footer">
-      <button class="card__details-btn" title="Details">DETAILS</button>
-      <button title="Add to Favorites" (onClick)="addToFavorites(movie.id)">
-        <span class="material-symbols-outlined"> favorite </span>
-      </button>
-      <button title="Add to Watchlist">
-        <span class="material-symbols-outlined"> playlist_add </span>
-      </button>
-    </div>
   </ng-template>
 </p-card>
