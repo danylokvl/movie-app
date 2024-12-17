@@ -1,0 +1,12 @@
+.p-menubar {
+  padding: 2vh 1vw;
+  .p-menubar__links-list {
+    display: flex;
+    column-gap: 50%;
+    li {
+      a {
+        white-space: nowrap;
+      }
+    }
+  }
+}

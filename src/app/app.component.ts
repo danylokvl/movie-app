@@ -12,11 +12,12 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MovieListComponent],
+  imports: [RouterOutlet, MovieListComponent, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

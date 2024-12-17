@@ -7,33 +7,6 @@
       (addedToWatchList)="onAddToWatchList($event)"
     />
   </ul>
-  <div
-    class="favorites-block"
-    *ngIf="favoriteMovies.length > 0; else emptyBlock"
-  >
-    <h2>Favorites</h2>
-    <ul class="movies__list">
-      <app-movie-card
-        *ngFor="let movie of favoriteMovies"
-        [movie]="movie"
-        (addedToFavorites)="onAddToFavorites($event)"
-        (addedToWatchList)="onAddToWatchList($event)"
-      />
-    </ul>
-  </div>
-  <div
-    class="watchList-block"
-    *ngIf="watchListMovies.length > 0; else emptyBlock"
-  >
-    <h2>Watchlist</h2>
-    <ul class="movies__list">
-      <app-movie-card
-        *ngFor="let movie of watchListMovies"
-        [movie]="movie"
-        (addedToFavorites)="onAddToFavorites($event)"
-        (addedToWatchList)="onAddToWatchList($event)"
-      />
-    </ul>
-  </div>
+
   <ng-template #emptyBlock />
 </section>
