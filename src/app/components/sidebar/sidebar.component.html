@@ -1,0 +1,35 @@
+<p-sidebar
+  [visible]="true"
+  position="left"
+  [style]="{ width: '10vw' }"
+  modal="false"
+  transitionOptions=""
+  showCloseIcon="false"
+>
+    <ng-template pTemplate="header">Header Content</ng-template>  
+  <ng-template pTemplate="content">
+    <ul class="sidebar-links-list">
+      <li>
+        <a [routerLink]="[{ outlets: { sidebarOutlet: ['now-playing'] } }]"
+          >Now Playing</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="[{ outlets: { sidebarOutlet: ['popular'] } }]"
+          >Popular</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="[{ outlets: { sidebarOutlet: ['top-rate'] } }]"
+          >Top Rate</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="[{ outlets: { sidebarOutlet: ['upcoming'] } }]"
+          >Upcoming</a
+        >
+      </li>
+    </ul>
+  </ng-template>
+   
+</p-sidebar>

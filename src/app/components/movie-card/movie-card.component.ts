@@ -11,7 +11,7 @@ import { CardModule } from 'primeng/card';
 @Component({
   selector: 'app-movie-card',
   standalone: true,
-  imports: [NgIf, FormatDurationPipe, CardModule, NgFor],
+  imports: [FormatDurationPipe, CardModule, NgFor],
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.scss',
   encapsulation: ViewEncapsulation.None,
