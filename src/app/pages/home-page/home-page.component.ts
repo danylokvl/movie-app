@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { MovieListComponent } from '../../components/movie-list/movies-list.component';
+import { MoviesListComponent } from '../../components/movie-list/movies-list.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [MovieListComponent],
+  imports: [MoviesListComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })

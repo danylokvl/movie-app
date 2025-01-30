@@ -3,10 +3,8 @@
     <app-movie-card
       *ngFor="let movie of movies"
       [movie]="movie"
-      (addedToFavorites)="onAddToFavorites($event)"
-      (addedToWatchList)="onAddToWatchList($event)"
+      (OutputIdToMoviesList)="PushMovieIdToCorrectArray($event)"
     />
   </ul>
-
   <ng-template #emptyBlock />
 </section>

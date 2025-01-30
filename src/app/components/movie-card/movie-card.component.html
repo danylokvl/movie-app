@@ -2,10 +2,16 @@
   <ng-template pTemplate="header">
     <img [src]="movie.poster_path" />
     <div class="card__buttons-container">
-      <button title="Add to Favorites" (onClick)="addToFavorites(movie.id)">
+      <button
+        title="Add to Favorites"
+        (click)="AddIdToList({ id: movie.id, listName: 'favorites' })"
+      >
         <span class="material-symbols-outlined"> favorite </span>
       </button>
-      <button title="Add to Watchlist">
+      <button
+        title="Add to Watchlist"
+        (click)="AddIdToList({ id: movie.id, listName: 'watchlist' })"
+      >
         <span class="material-symbols-outlined"> playlist_add </span>
       </button>
     </div>

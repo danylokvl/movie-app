@@ -1,4 +1,4 @@
-import { NgIf, NgFor } from '@angular/common';
+import { NgFor } from '@angular/common';
 import {
   Component,
   EventEmitter,
@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { FormatDurationPipe } from '../../pipes/format-duration.pipe';
 import { CardModule } from 'primeng/card';
+import { MovieIdAndListName } from '../models/movie-id-and-list-name.model';
+
 @Component({
   selector: 'app-movie-card',
   standalone: true,
@@ -18,14 +20,10 @@ import { CardModule } from 'primeng/card';
 })
 export class MovieCardComponent {
   @Input() movie: any;
-  @Output() addedToFavorites: EventEmitter<number> = new EventEmitter<number>();
-  @Output() addedToWatchList: EventEmitter<number> = new EventEmitter<number>();
 
-  addToFavorites(id: number) {
-    this.addedToFavorites.emit(id);
-  }
+  @Output() OutputIdToMoviesList = new EventEmitter<MovieIdAndListName>();
 
-  addToWatchList(id: number) {
-    this.addedToWatchList.emit(id);
+  AddIdToList(value: MovieIdAndListName) {
+    this.OutputIdToMoviesList.emit(value);
   }
 }

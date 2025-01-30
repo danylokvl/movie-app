@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { movies } from '../../movies';
 import { Movie } from '../models/movie.model';
+import { MovieIdAndListName } from '../models/movie-id-and-list-name.model';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
@@ -11,24 +12,24 @@ import { NgFor, NgIf } from '@angular/common';
   templateUrl: './movies-list.component.html',
   styleUrl: './movies-list.component.scss',
 })
-export class MovieListComponent {
+export class MoviesListComponent {
+
+
   movies: Movie[] = movies;
-  favoriteMovies: Movie[] = [];
-  watchListMovies: Movie[] = [];
+  favoriteMoviesIds: number[] = [];
+  watchListMoviesIds: number[] = [];
 
-  private addToList(list: Movie[], id: number) {
-    const movieInList = list.find((movie) => movie.id === id);
-    if (movieInList) return list;
-    const addedMovie = this.movies.find((movie) => movie.id === id);
-    if (addedMovie) return [...list, addedMovie];
-    return list;
-  }
+  PushMovieIdToCorrectArray(value: any) {
+    let correctArray: number[] = [];
+    if (value.listName === 'favorites') {
+      correctArray = this.favoriteMoviesIds;
+    } else if (value.listName === 'watchlist') {
+      correctArray = this.watchListMoviesIds;
+    } else return;
 
-  onAddToFavorites(id: number) {
-    this.favoriteMovies = this.addToList(this.favoriteMovies, id);
-  }
+    correctArray.includes(value.id)
+      ? correctArray.splice(correctArray.indexOf(value.id), 1)
+      : correctArray.push(value.id);
 
-  onAddToWatchList(id: number) {
-    this.watchListMovies = this.addToList(this.watchListMovies, id);
   }
 }

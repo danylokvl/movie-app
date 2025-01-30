@@ -1,5 +1,5 @@
 import { RouterOutlet } from '@angular/router';
-import { MovieListComponent } from './components/movie-list/movies-list.component';
+import { MoviesListComponent } from './components/movie-list/movies-list.component';
 import { Component } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -9,7 +9,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    MovieListComponent,
+    MoviesListComponent,
     HeaderComponent,
     SidebarComponent,
   ],
