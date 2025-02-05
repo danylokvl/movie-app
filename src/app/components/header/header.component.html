@@ -2,7 +2,9 @@
   <ng-template pTemplate="start">
     <ul class="p-menubar__links-list">
       <li id="logo"><a routerLink="/">Movie Sphere</a></li>
-      <li><a routerLink="/favorites">Favorites</a></li>
+      <li>
+        <a (click)="navigateToFavoritesPage()">Favorites</a>
+      </li>
       <li><a routerLink="/watchlist">Watchlist</a></li>
     </ul>
   </ng-template>

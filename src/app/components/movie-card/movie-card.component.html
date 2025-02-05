@@ -1,6 +1,6 @@
 <p-card header="{{ movie.original_title }}" styleClass="card">
   <ng-template pTemplate="header">
-    <img [src]="movie.poster_path" />
+    <img [src]="'https://image.tmdb.org/t/p/w500/'+ movie.poster_path" />
     <div class="card__buttons-container">
       <button
         title="Add to Favorites"
@@ -22,12 +22,12 @@
   <ng-template pTemplate="content">
     <ul class="card__characteristics-list">
       <li>
-        <h4>Duration</h4>
-        <span> {{ movie.duration | formatDuration }}</span>
+        <h4>Release Date</h4>
+        <span> {{ movie.release_date}}</span>
       </li>
       <li>
-        <h4>Rating</h4>
-        <span> {{ movie.rating }}</span>
+        <h4>Popularity</h4>
+        <span> {{ movie.popularity }}</span>
       </li>
       <li>
         <h4>Language</h4>

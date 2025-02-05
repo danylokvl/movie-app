@@ -20,8 +20,8 @@ import { MovieIdAndListName } from '../models/movie-id-and-list-name.model';
 })
 export class MovieCardComponent {
   @Input() movie: any;
-
   @Output() OutputIdToMoviesList = new EventEmitter<MovieIdAndListName>();
+  
 
   AddIdToList(value: MovieIdAndListName) {
     this.OutputIdToMoviesList.emit(value);

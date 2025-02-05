@@ -1,7 +1,7 @@
 <section class="movies">
   <ul class="movies__list">
     <app-movie-card
-      *ngFor="let movie of movies"
+      *ngFor="let movie of movies.nowPlayingMovies"
       [movie]="movie"
       (OutputIdToMoviesList)="PushMovieIdToCorrectArray($event)"
     />
