@@ -1,11 +1,27 @@
+@import "../../styles/shared.scss";
+
 .p-menubar {
+  background-color: var(--surface-0);
   padding: 2vh 1vw;
+  border: none;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100vw;
+  div.p-menubar.p-component {
+    border: none;
+  }
   .p-menubar__links-list {
     display: flex;
     column-gap: 50%;
+    background-color: var(--surface-0);
+    font-family: $font-1;
     li {
       a {
-        white-space: nowrap;
+        color: var(--text-color);
+        &:hover {
+          color: var(--primary-color);
+        }
       }
     }
   }

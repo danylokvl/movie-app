@@ -13,7 +13,6 @@ import { MoviesListComponent } from '../../components/movie-list/movies-list.com
 })
 export class FavoritesPageComponent implements OnInit {
   favoriteMoviesIds: string[] = [];
-
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {

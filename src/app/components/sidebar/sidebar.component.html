@@ -3,10 +3,13 @@
   position="left"
   [style]="{ width: '10vw' }"
   modal="false"
-  transitionOptions=""
+  transitionOptions="0ms ease"
   showCloseIcon="false"
 >
   <ng-template pTemplate="content">
+    <a routerLink="/"
+      ><img src="../../../assets/images/logo.png" class="logo"
+    /></a>
     <ul class="sidebar-links-list">
       <li>
         <a [routerLink]="[{ outlets: { sidebarOutlet: ['now-playing'] } }]"

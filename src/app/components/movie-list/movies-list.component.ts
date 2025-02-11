@@ -38,6 +38,5 @@ export class MoviesListComponent {
     correctArray.includes(value.id)
       ? correctArray.splice(correctArray.indexOf(value.id), 1)
       : correctArray.push(value.id);
-    console.log(favoriteMoviesIds);
   }
 }
